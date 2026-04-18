@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice Board Admin &mdash; Amol Chand Public School</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="cursor-glow"></div>
+    <div class="background-wrapper">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <header class="site-header" id="navbar">
+        <nav>
+            <a href="index.html" class="logo-container">
+                <div class="logo-icon">AC</div>
+                <div>
+                    <div class="school-name">Amol Chand Public School</div>
+                    <div class="school-tagline">Admin Panel</div>
+                </div>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="admin.html">Dashboard</a></li>
+                <li class="nav-dropdown">
+                    <a href="#"><span>Academics</span> <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="admin-syllabus.html"><i class="fas fa-book"></i> Syllabus</a></li>
+                        <li><a href="admin-results.html"><i class="fas fa-chart-line"></i> Results</a></li>
+                        <li><a href="admin-toppers.html"><i class="fas fa-trophy"></i> Toppers</a></li>
+                        <li><a href="admin-faculty.html"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="#"><span>Announcements</span> <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="admin-events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                        <li><a href="admin-notices.html"><i class="fas fa-bullhorn"></i> Notices</a></li>
+                    </ul>
+                </li>
+                <li><a href="admin-gallery.html">Gallery</a></li>
+                <li><a href="admin-fee.html">Fee</a></li>
+                <li><a href="admin-downloads.html">Downloads</a></li>
+                <li><a href="admin-about.html">About</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <div class="page-banner">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a><span>/</span><a href="admin.html">Admin</a><span>/</span><span>Notice Board</span>
+        </div>
+        <h1>Notice Board Management</h1>
+        <p>Create and manage school announcements and notices</p>
+    </div>
+
+    <main class="container" style="padding-top:0;">
+        <div class="dashboard-grid" style="align-items:start;">
+            <div class="glass glass-card reveal" style="padding:40px;">
+                <div class="section-title" style="margin-bottom:6px;">
+                    <i class="fas fa-plus-circle" style="color:#ec4899;"></i>
+                    <h2>Create New Notice</h2>
+                </div>
+                <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:30px; padding-left:54px;">Add a new announcement to the notice board</p>
+
+                <form class="glass-form" id="noticeForm">
+                    <div class="form-group">
+                        <label class="form-label">Notice Title</label>
+                        <input type="text" class="glass-input" id="noticeTitle" placeholder="e.g. Admissions open for 2025-26" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Category</label>
+                            <select class="glass-input" id="noticeCategory" required>
+                                <option value="" disabled selected>Select category</option>
+                                <option value="admission">Admission</option>
+                                <option value="exam">Examination</option>
+                                <option value="holiday">Holiday</option>
+                                <option value="event">Event</option>
+                                <option value="general">General</option>
+                                <option value="urgent">Urgent</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Display Date</label>
+                            <input type="date" class="glass-input" id="noticeDate" required style="color-scheme: dark;">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Notice Description</label>
+                        <textarea class="glass-input" id="noticeDescription" rows="4" placeholder="Enter detailed notice description..." required style="resize:vertical;"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Priority</label>
+                        <select class="glass-input" id="noticePriority">
+                            <option value="normal">Normal</option>
+                            <option value="high">High Priority</option>
+                            <option value="urgent">Urgent</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
+                            <input type="checkbox" id="noticeIsNew" style="width:18px; height:18px; cursor:pointer;">
+                            <span style="font-size:0.9rem; color:rgba(255,255,255,0.85);">Mark as "New" badge</span>
+                        </label>
+                    </div>
+
+                    <div id="noticeMsg" style="display:none;"></div>
+
+                    <button type="submit" class="btn" style="width:100%; justify-content:center; margin-top:16px;">
+                        <i class="fas fa-paper-plane"></i> Publish Notice
+                    </button>
+                </form>
+            </div>
+
+            <div>
+                <div class="glass glass-card reveal" style="padding:32px; margin-bottom:24px;">
+                    <div class="section-title" style="margin-bottom:6px;">
+                        <i class="fas fa-list" style="color:#fbbf24;"></i>
+                        <h2>Active Notices</h2>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:20px; padding-left:54px;">Currently published notices</p>
+
+                    <div id="noticesList">
+                        <!-- Notices will be loaded here -->
+                    </div>
+                </div>
+
+                <div class="glass glass-card reveal" style="padding:28px;">
+                    <h3 style="font-size:1rem; margin-bottom:16px;"><i class="fas fa-info-circle" style="color:var(--accent); margin-right:8px;"></i> Notice Guidelines</h3>
+                    <ul style="font-size:0.85rem; color:rgba(255,255,255,0.8); line-height:1.8; padding-left:20px;">
+                        <li>Keep titles clear and concise</li>
+                        <li>Use appropriate categories</li>
+                        <li>Mark urgent notices with high priority</li>
+                        <li>Review before publishing</li>
+                        <li>Update or remove outdated notices</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p>&copy; <span data-current-year>2026</span> Amol Chand Public School. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/api-service.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/admin-notices.js"></script>
+    <script src="js/ripple-effect.js"></script>
+</body>
+</html>

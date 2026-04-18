@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel &mdash; Amol Chand Public School</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="cursor-glow"></div>
+    <div class="background-wrapper">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <header class="site-header" id="navbar">
+        <nav>
+            <a href="index.html" class="logo-container">
+                <div class="logo-icon">AC</div>
+                <div>
+                    <div class="school-name">Amol Chand Public School</div>
+                    <div class="school-tagline">Admin Panel</div>
+                </div>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="admin.html">Admin Dashboard</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <div class="page-banner">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a><span>/</span><span>Admin Panel</span>
+        </div>
+        <h1>Admin Dashboard</h1>
+        <p>Manage school content, results, and gallery</p>
+    </div>
+
+    <main class="container" style="padding-top:0;">
+        <!-- Login Section (if not logged in) -->
+        <div id="loginSection" class="glass glass-card reveal" style="max-width:500px; margin:0 auto; padding:40px;">
+            <div class="section-title" style="margin-bottom:6px; justify-content:center;">
+                <i class="fas fa-lock" style="color:#60a5fa;"></i>
+                <h2>Admin Login</h2>
+            </div>
+            <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:30px; text-align:center;">Enter your credentials to access the admin panel</p>
+
+            <form class="glass-form" id="adminLoginForm">
+                <div class="form-group">
+                    <label class="form-label">Username</label>
+                    <input type="text" class="glass-input" id="adminUsername" placeholder="Enter username" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="glass-input" id="adminPassword" placeholder="Enter password" required>
+                </div>
+
+                <div id="loginMsg" style="display:none;"></div>
+
+                <button type="submit" class="btn" style="width:100%; justify-content:center; margin-top:16px;">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+
+                <div style="margin-top:20px; padding:16px; background:rgba(96,165,250,0.1); border:1px solid rgba(96,165,250,0.25); border-radius:12px;">
+                    <p style="font-size:0.8rem; color:rgba(255,255,255,0.8); margin-bottom:8px;"><i class="fas fa-info-circle" style="color:#60a5fa;"></i> Demo Credentials:</p>
+                    <p style="font-size:0.85rem; color:rgba(255,255,255,0.9); margin:4px 0;"><strong>Username:</strong> admin</p>
+                    <p style="font-size:0.85rem; color:rgba(255,255,255,0.9); margin:4px 0;"><strong>Password:</strong> admin123</p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Dashboard Section (shown after login) -->
+        <div id="dashboardSection" style="display:none;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:30px;">
+                <div>
+                    <h2 style="font-size:1.8rem; margin-bottom:8px;">Welcome, <span id="adminNameDisplay">Admin</span>!</h2>
+                    <p style="color:var(--text-muted); font-size:0.9rem;">Manage your school website content</p>
+                </div>
+                <button class="btn btn-outline" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+
+            <div class="admin-dashboard-grid">
+                <a href="admin-results.html" class="admin-card glass glass-card">
+                    <div class="admin-card-icon" style="background:rgba(16,185,129,0.2); color:#34d399;">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    <h3>Results Management</h3>
+                    <p>Upload and manage student results from Excel/CSV files</p>
+                    <div class="admin-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="admin-gallery.html" class="admin-card glass glass-card">
+                    <div class="admin-card-icon" style="background:rgba(37,99,235,0.2); color:#60a5fa;">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <h3>Gallery Management</h3>
+                    <p>Upload and organize school event photos and images</p>
+                    <div class="admin-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="admin-toppers.html" class="admin-card glass glass-card">
+                    <div class="admin-card-icon" style="background:rgba(251,191,36,0.2); color:#fbbf24;">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Board of Fame</h3>
+                    <p>Manage school toppers and achievers</p>
+                    <div class="admin-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="admin-faculty.html" class="admin-card glass glass-card">
+                    <div class="admin-card-icon" style="background:rgba(59,130,246,0.2); color:#60a5fa;">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Faculty Management</h3>
+                    <p>Add and manage faculty members</p>
+                    <div class="admin-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="admin-notices.html" class="admin-card glass glass-card">
+                    <div class="admin-card-icon" style="background:rgba(236,72,153,0.2); color:#f472b6;">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Notice Board</h3>
+                    <p>Manage school announcements and notices</p>
+                    <div class="admin-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="admin-events.html" class="admin-card glass glass-card">
+                    <div class="admin-card-icon" style="background:rgba(245,158,11,0.2); color:#fbbf24;">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Events Management</h3>
+                    <p>Create and manage school events and calendar</p>
+                    <div class="admin-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="admin-downloads.html" class="admin-card glass glass-card">
+                    <div class="admin-card-icon" style="background:rgba(139,92,246,0.2); color:#a78bfa;">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>Downloads Management</h3>
+                    <p>Upload and manage downloadable files and PDFs</p>
+                    <div class="admin-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="admin-syllabus.html" class="admin-card glass glass-card">
+                    <div class="admin-card-icon" style="background:rgba(16,185,129,0.2); color:#34d399;">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Syllabus Management</h3>
+                    <p>Upload and manage class-wise syllabus documents</p>
+                    <div class="admin-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="admin-fee.html" class="admin-card glass glass-card">
+                    <div class="admin-card-icon" style="background:rgba(20,184,166,0.2); color:#5eead4;">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <h3>Fee Structure</h3>
+                    <p>Manage school fee structure and pricing</p>
+                    <div class="admin-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="admin-about.html" class="admin-card glass glass-card">
+                    <div class="admin-card-icon" style="background:rgba(59,130,246,0.2); color:#93c5fd;">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3>About Section</h3>
+                    <p>Edit mission, vision, and principal's message</p>
+                    <div class="admin-card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <div class="admin-card glass glass-card" style="opacity:0.6; cursor:not-allowed;">
+                    <div class="admin-card-icon" style="background:rgba(168,85,247,0.2); color:#c084fc;">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3>Settings</h3>
+                    <p>Configure website settings and preferences</p>
+                    <div class="admin-card-badge">Coming Soon</div>
+                </div>
+            </div>
+
+            <div class="glass glass-card reveal" style="padding:32px; margin-top:30px;">
+                <h3 style="font-size:1.2rem; margin-bottom:20px;"><i class="fas fa-chart-line" style="color:var(--accent); margin-right:8px;"></i> Quick Stats</h3>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:20px;">
+                    <div class="stat-box">
+                        <div class="stat-icon" style="background:rgba(16,185,129,0.2); color:#34d399;">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="stat-value" id="statResults">0</div>
+                        <div class="stat-label">Total Content Items</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon" style="background:rgba(37,99,235,0.2); color:#60a5fa;">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="stat-value" id="statGallery">0</div>
+                        <div class="stat-label">Gallery Images</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon" style="background:rgba(236,72,153,0.2); color:#f472b6;">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-value" id="statStudents">0</div>
+                        <div class="stat-label">Total Students</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon" style="background:rgba(245,158,11,0.2); color:#fbbf24;">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-value" id="statLastUpdate">Never</div>
+                        <div class="stat-label">Last Updated</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p>&copy; <span data-current-year>2026</span> Amol Chand Public School. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/api-service.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/ripple-effect.js"></script>
+</body>
+</html>

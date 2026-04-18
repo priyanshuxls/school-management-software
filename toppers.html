@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Toppers &mdash; Amol Chand Public School</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/toppers.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="cursor-glow"></div>
+    <div class="background-wrapper">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <header class="site-header" id="navbar">
+        <nav>
+            <a href="index.html" class="logo-container">
+                <div class="logo-icon">AC</div>
+                <div>
+                    <div class="school-name">Amol Chand Public School</div>
+                    <div class="school-tagline">Empowering Future Leaders</div>
+                </div>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="admission.html">Admissions</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" onclick="return false;">
+                        Academics <i class="fas fa-chevron-down dropdown-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="syllabus.html"><i class="fas fa-book-open"></i> Syllabus</a></li>
+                        <li><a href="result.html"><i class="fas fa-chart-line"></i> Results</a></li>
+                        <li><a href="activity.html"><i class="fas fa-running"></i> Activities</a></li>
+                        <li><a href="toppers.html"><i class="fas fa-trophy"></i> Toppers</a></li>
+                        <li><a href="faculty.html"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <div class="page-banner">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a><span>/</span><span>Board Toppers</span>
+        </div>
+        <h1>Board of Fame</h1>
+        <p>Celebrating academic excellence and outstanding achievements</p>
+    </div>
+
+    <main class="container" style="padding-top:0;">
+        <div class="glass glass-card reveal" style="padding:32px; margin-bottom:30px;">
+            <div style="display:flex; justify-content:center; gap:12px; margin-bottom:30px; flex-wrap:wrap;">
+                <button class="topper-mode-btn active" data-mode="board">
+                    <i class="fas fa-trophy"></i> Board Toppers
+                </button>
+                <button class="topper-mode-btn" data-mode="yearly">
+                    <i class="fas fa-calendar-alt"></i> Yearly Toppers
+                </button>
+                <button class="topper-mode-btn" data-mode="class">
+                    <i class="fas fa-users"></i> Class Toppers
+                </button>
+            </div>
+
+            <!-- Board Toppers View -->
+            <div id="board-view" class="topper-view active">
+                <div style="text-align:center; margin-bottom:30px;">
+                    <h2 style="font-size:1.5rem; margin-bottom:8px;">Board Toppers</h2>
+                    <p style="color:var(--text-muted); font-size:0.9rem;">High School (Class X) and Intermediate (Class XII) Board Examination Results</p>
+                </div>
+
+                <div style="margin-bottom:40px;">
+                    <h3 style="font-size:1.2rem; margin-bottom:20px; color:#60a5fa;"><i class="fas fa-trophy" style="color:#fbbf24;"></i> Class XII - Intermediate</h3>
+                    <div class="toppers-grid" id="board-class12-toppers"></div>
+                </div>
+
+                <div>
+                    <h3 style="font-size:1.2rem; margin-bottom:20px; color:#60a5fa;"><i class="fas fa-trophy" style="color:#fbbf24;"></i> Class X - High School</h3>
+                    <div class="toppers-grid" id="board-class10-toppers"></div>
+                </div>
+            </div>
+
+            <!-- Yearly Toppers View -->
+            <div id="yearly-view" class="topper-view">
+                <div style="text-align:center; margin-bottom:30px;">
+                    <h2 style="font-size:1.5rem; margin-bottom:8px;">Yearly Toppers</h2>
+                    <p style="color:var(--text-muted); font-size:0.9rem;">1st, 2nd, and 3rd position holders from each class</p>
+                    
+                    <div style="margin-top:20px; display:flex; justify-content:center; align-items:center; gap:12px;">
+                        <label for="yearSelector" style="font-size:0.9rem; font-weight:600;">Select Year:</label>
+                        <select id="yearSelector" class="glass-input" style="width:auto; padding:8px 16px;">
+                            <!-- Years will be populated dynamically -->
+                        </select>
+                    </div>
+                </div>
+
+                <div id="yearly-toppers-container"></div>
+            </div>
+
+            <!-- Class Toppers View -->
+            <div id="class-view" class="topper-view">
+                <div style="text-align:center; margin-bottom:30px;">
+                    <h2 style="font-size:1.5rem; margin-bottom:8px;">Class Toppers</h2>
+                    <p style="color:var(--text-muted); font-size:0.9rem;">Current year top performers from each class</p>
+                </div>
+
+                <div class="toppers-grid" id="class-toppers-container"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Student Detail Modal -->
+    <div id="studentModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass">
+            <button class="modal-close" aria-label="Close modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="student-detail-grid">
+                <div class="student-detail-left">
+                    <div class="student-detail-avatar" id="modalAvatar"></div>
+                    <h3 id="modalName" style="margin-top:16px; font-size:1.3rem;"></h3>
+                    <p id="modalClass" style="color:var(--text-muted); font-size:0.9rem; margin-top:4px;"></p>
+                    <div id="modalPercentage" style="font-size:2rem; font-weight:700; margin-top:16px; background: linear-gradient(135deg, #fbbf24, #f59e0b); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></div>
+                </div>
+                <div class="student-detail-right">
+                    <h4 style="font-size:1.1rem; margin-bottom:16px; color:#60a5fa;">Subject-wise Marks</h4>
+                    <table class="student-marks-table" id="modalMarks"></table>
+                    
+                    <div style="margin-top:24px; padding:20px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); border-radius:12px;">
+                        <h4 style="font-size:0.95rem; margin-bottom:8px; color:#34d399;">Remarks</h4>
+                        <p id="modalRemarks" style="font-size:0.88rem; line-height:1.7; color:rgba(255,255,255,0.85);"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p>&copy; <span data-current-year>2026</span> Amol Chand Public School. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/toppers.js"></script>
+    <script src="js/ripple-effect.js"></script>
+</body>
+</html>

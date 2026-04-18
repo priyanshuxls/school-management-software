@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amol Chand Public School &mdash; Empowering Future Leaders</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Critical CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Defer non-critical CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+</head>
+<body>
+
+    <div class="cursor-glow"></div>
+
+    <div class="background-wrapper">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <header class="site-header" id="navbar">
+        <nav>
+            <a href="index.html" class="logo-container">
+                <div class="logo-icon">AC</div>
+                <div>
+                    <div class="school-name">Amol Chand Public School</div>
+                    <div class="school-tagline">Empowering Future Leaders</div>
+                </div>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="admission.html">Admissions</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" onclick="return false;">
+                        Academics <i class="fas fa-chevron-down dropdown-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="syllabus.html"><i class="fas fa-book-open"></i> Syllabus</a></li>
+                        <li><a href="result.html"><i class="fas fa-chart-line"></i> Results</a></li>
+                        <li><a href="activity.html"><i class="fas fa-running"></i> Activities</a></li>
+                        <li><a href="toppers.html"><i class="fas fa-trophy"></i> Toppers</a></li>
+                        <li><a href="faculty.html"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content glass glass-card">
+            <span class="hero-eyebrow"><i class="fas fa-star"></i> &nbsp;Est. 1985 &middot; CBSE Affiliated</span>
+            <h1>Nurturing Minds,<br>Shaping Leaders</h1>
+            <p>Welcome to Amol Chand Public School &mdash; where academic excellence meets holistic development. Building tomorrow's leaders today.</p>
+            <div class="hero-btns">
+                <a href="admission.html" class="btn"><i class="fas fa-graduation-cap"></i> Explore Admissions</a>
+                <a href="about.html" class="btn btn-outline"><i class="fas fa-play-circle"></i> Learn More</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-num">38+</div>
+                    <div class="hero-stat-label">Years of Excellence</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">2500+</div>
+                    <div class="hero-stat-label">Students Enrolled</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">150+</div>
+                    <div class="hero-stat-label">Dedicated Faculty</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">98%</div>
+                    <div class="hero-stat-label">Board Pass Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container dashboard-grid">
+        <div class="left-content">
+            <section class="glass glass-card reveal" style="padding: 32px; margin-bottom: 30px;">
+                <div class="section-title">
+                    <i class="fas fa-trophy" style="color: #fbbf24;"></i>
+                    <h2>Board of Fame</h2>
+                </div>
+                <p class="section-subtitle">Our top achievers in board examinations</p>
+                <div class="card-grid" id="toppers-container"></div>
+                <div style="margin-top: 24px;">
+                    <a href="toppers.html" class="btn btn-outline btn-sm"><i class="fas fa-medal"></i> View All Toppers</a>
+                </div>
+            </section>
+
+            <section class="glass glass-card reveal" style="padding: 32px;">
+                <div class="section-title">
+                    <i class="fas fa-chalkboard-teacher" style="color: #60a5fa;"></i>
+                    <h2>Our Dedicated Faculty</h2>
+                </div>
+                <p class="section-subtitle">Experienced educators shaping bright futures</p>
+                <div class="card-grid" id="staff-container"></div>
+                <div style="margin-top: 24px; text-align: center;">
+                    <a href="faculty.html" class="btn btn-outline btn-sm"><i class="fas fa-users"></i> View All Faculty</a>
+                </div>
+            </section>
+        </div>
+
+        <aside class="right-sidebar">
+            <div class="glass glass-card reveal" style="padding: 28px; margin-bottom: 26px;">
+                <div class="section-title">
+                    <i class="fas fa-bullhorn" style="color: var(--secondary);"></i>
+                    <h2>Notice Board</h2>
+                </div>
+                <p class="section-subtitle" style="padding-left:0; margin-bottom:18px; margin-top:6px;">Latest announcements</p>
+                <div class="notice-list" id="notice-container"></div>
+            </div>
+
+            <div class="glass glass-card reveal" style="padding: 28px;">
+                <div class="section-title">
+                    <i class="far fa-calendar-alt" style="color: var(--accent);"></i>
+                    <h2>Upcoming Events</h2>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 18px;" id="events-container">
+                    <!-- Events will be loaded dynamically -->
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo-container" style="margin-bottom:0;">
+                    <div class="logo-icon">AC</div>
+                    <div>
+                        <div class="school-name">Amol Chand Public School</div>
+                        <div class="school-tagline">Empowering Future Leaders</div>
+                    </div>
+                </div>
+                <p>Dedicated to nurturing minds and building character since 1985. CBSE affiliated school providing holistic education for classes Pre-Nursery to XII.</p>
+                <div class="social-links">
+                    <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="activity.html">Activities</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="admission.html">Admissions</a></li>
+                    <li><a href="syllabus.html">Syllabus</a></li>
+                    <li><a href="admission.html#fee">Fee Structure</a></li>
+                    <li><a href="result.html">Result Portal</a></li>
+                    <li><a href="admission.html#downloads">Downloads</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+                    <li><a href="mailto:info@amolchandschool.edu.in">info@acps.edu.in</a></li>
+                    <li><a href="contact.html">Send a Message</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span data-current-year>2026</span> Amol Chand Public School. All rights reserved.</p>
+            <p style="display:flex; gap:20px;">
+                <a href="#" style="color:var(--text-muted); font-size:0.82rem;">Privacy Policy</a>
+                <a href="#" style="color:var(--text-muted); font-size:0.82rem;">Terms of Use</a>
+                <a href="admin.html" style="color:var(--text-muted); font-size:0.82rem;"><i class="fas fa-lock"></i> Admin</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/api-service.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/ripple-effect.js"></script>
+</body>
+</html>

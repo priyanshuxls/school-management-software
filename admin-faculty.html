@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Admin &mdash; Amol Chand Public School</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="cursor-glow"></div>
+    <div class="background-wrapper">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <header class="site-header" id="navbar">
+        <nav>
+            <a href="index.html" class="logo-container">
+                <div class="logo-icon">AC</div>
+                <div>
+                    <div class="school-name">Amol Chand Public School</div>
+                    <div class="school-tagline">Admin Panel</div>
+                </div>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="admin.html">Dashboard</a></li>
+                <li class="nav-dropdown">
+                    <a href="#"><span>Academics</span> <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="admin-syllabus.html"><i class="fas fa-book"></i> Syllabus</a></li>
+                        <li><a href="admin-results.html"><i class="fas fa-chart-line"></i> Results</a></li>
+                        <li><a href="admin-toppers.html"><i class="fas fa-trophy"></i> Toppers</a></li>
+                        <li><a href="admin-faculty.html"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="#"><span>Announcements</span> <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="admin-events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                        <li><a href="admin-notices.html"><i class="fas fa-bullhorn"></i> Notices</a></li>
+                    </ul>
+                </li>
+                <li><a href="admin-gallery.html">Gallery</a></li>
+                <li><a href="admin-fee.html">Fee</a></li>
+                <li><a href="admin-downloads.html">Downloads</a></li>
+                <li><a href="admin-about.html">About</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <div class="page-banner">
+        <div class="breadcrumb">
+            <a href="admin.html">Admin</a><span>/</span><span>Faculty Management</span>
+        </div>
+        <h1>Manage Faculty Members</h1>
+        <p>Add, edit, and manage school faculty</p>
+    </div>
+
+    <main class="container" style="padding-top:0;">
+        <!-- Add New Faculty -->
+        <div class="glass glass-card reveal" style="padding:40px; margin-bottom:30px;">
+            <div class="section-title" style="margin-bottom:6px;">
+                <i class="fas fa-user-plus" style="color:#60a5fa;"></i>
+                <h2>Add New Faculty Member</h2>
+            </div>
+            <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:30px; padding-left:54px;">Add a new faculty member to the team</p>
+
+            <form class="glass-form" id="facultyForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="glass-input" id="facultyName" placeholder="e.g. Dr. A. K. Singh" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Designation</label>
+                        <input type="text" class="glass-input" id="designation" placeholder="e.g. Principal, Vice Principal" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Qualification/Subject</label>
+                        <input type="text" class="glass-input" id="subject" placeholder="e.g. M.Ed, Ph.D or M.Sc. Physics" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Full Qualification</label>
+                        <input type="text" class="glass-input" id="qualification" placeholder="e.g. Ph.D in Education, M.Ed">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Experience</label>
+                        <input type="text" class="glass-input" id="experience" placeholder="e.g. 15 years">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="glass-input" id="email" placeholder="e.g. faculty@acps.edu.in">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Icon</label>
+                    <select class="glass-input" id="icon" required>
+                        <option value="" disabled selected>Select icon</option>
+                        <option value="fa-user-tie">👔 Principal/Admin</option>
+                        <option value="fa-chalkboard-teacher">👨‍🏫 Teacher</option>
+                        <option value="fa-flask">🧪 Science</option>
+                        <option value="fa-calculator">🔢 Mathematics</option>
+                        <option value="fa-book">📚 English/Literature</option>
+                        <option value="fa-globe">🌍 Geography/Social</option>
+                        <option value="fa-atom">⚛️ Physics/Chemistry</option>
+                        <option value="fa-dna">🧬 Biology</option>
+                        <option value="fa-laptop-code">💻 Computer Science</option>
+                        <option value="fa-palette">🎨 Arts</option>
+                        <option value="fa-music">🎵 Music</option>
+                        <option value="fa-running">🏃 Sports/PE</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Remarks/About (Optional)</label>
+                    <textarea class="glass-input" id="facultyRemarks" rows="3" placeholder="Brief description about the faculty member..." style="resize:vertical;"></textarea>
+                </div>
+
+                <div id="facultyMsg" style="display:none;"></div>
+
+                <button type="submit" class="btn" style="width:100%; justify-content:center; margin-top:16px;">
+                    <i class="fas fa-plus"></i> Add Faculty Member
+                </button>
+            </form>
+        </div>
+
+        <!-- Manage Existing Faculty -->
+        <div class="glass glass-card reveal" style="padding:40px;">
+            <div class="section-title" style="margin-bottom:6px;">
+                <i class="fas fa-users" style="color:#34d399;"></i>
+                <h2>Current Faculty Members</h2>
+            </div>
+            <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:30px; padding-left:54px;">View and manage existing faculty</p>
+
+            <div id="facultyList" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:20px;">
+                <!-- Faculty will be loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p>&copy; <span data-current-year>2026</span> Amol Chand Public School. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/api-service.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/admin-faculty.js"></script>
+    <script src="js/ripple-effect.js"></script>
+</body>
+</html>

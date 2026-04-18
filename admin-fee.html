@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Structure Management &mdash; Amol Chand Public School</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="cursor-glow"></div>
+    <div class="background-wrapper">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <header class="site-header" id="navbar">
+        <nav>
+            <a href="index.html" class="logo-container">
+                <div class="logo-icon">AC</div>
+                <div>
+                    <div class="school-name">Amol Chand Public School</div>
+                    <div class="school-tagline">Admin Panel</div>
+                </div>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="admin.html">Dashboard</a></li>
+                <li class="nav-dropdown">
+                    <a href="#"><span>Academics</span> <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="admin-syllabus.html"><i class="fas fa-book"></i> Syllabus</a></li>
+                        <li><a href="admin-results.html"><i class="fas fa-chart-line"></i> Results</a></li>
+                        <li><a href="admin-toppers.html"><i class="fas fa-trophy"></i> Toppers</a></li>
+                        <li><a href="admin-faculty.html"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="#"><span>Announcements</span> <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="admin-events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                        <li><a href="admin-notices.html"><i class="fas fa-bullhorn"></i> Notices</a></li>
+                    </ul>
+                </li>
+                <li><a href="admin-gallery.html">Gallery</a></li>
+                <li><a href="admin-fee.html">Fee</a></li>
+                <li><a href="admin-downloads.html">Downloads</a></li>
+                <li><a href="admin-about.html">About</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <div class="page-banner">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a><span>/</span><a href="admin.html">Admin</a><span>/</span><span>Fee Structure</span>
+        </div>
+        <h1>Fee Structure Management</h1>
+        <p>Manage school fee structure and pricing</p>
+    </div>
+
+    <main class="container" style="padding-top:0;">
+        <div class="glass glass-card reveal" style="padding:40px; margin-bottom:30px;">
+            <div class="section-title" style="margin-bottom:6px;">
+                <i class="fas fa-rupee-sign" style="color:#fbbf24;"></i>
+                <h2>Add/Edit Fee Structure</h2>
+            </div>
+            <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:30px; padding-left:54px;">Update fee details for different classes</p>
+
+            <form class="glass-form" id="feeForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Class/Group</label>
+                        <input type="text" class="glass-input" id="feeClass" placeholder="e.g. Class I - V" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Academic Session</label>
+                        <input type="text" class="glass-input" id="feeSession" placeholder="e.g. 2025-26" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Admission Fee (One-time)</label>
+                        <input type="number" class="glass-input" id="admissionFee" placeholder="e.g. 8000" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Tuition Fee (Quarterly)</label>
+                        <input type="number" class="glass-input" id="tuitionFee" placeholder="e.g. 8500" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Annual Charges</label>
+                        <input type="number" class="glass-input" id="annualCharges" placeholder="e.g. 4500" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Transport Fee</label>
+                        <input type="text" class="glass-input" id="transportFee" placeholder="e.g. As per route" required>
+                    </div>
+                </div>
+
+                <div id="feeMsg" style="display:none;"></div>
+
+                <button type="submit" class="btn" style="width:100%; justify-content:center; margin-top:16px;">
+                    <i class="fas fa-save"></i> Save Fee Structure
+                </button>
+            </form>
+        </div>
+
+        <div class="glass glass-card reveal" style="padding:40px;">
+            <div class="section-title" style="margin-bottom:6px;">
+                <i class="fas fa-table" style="color:#34d399;"></i>
+                <h2>Current Fee Structure</h2>
+            </div>
+            <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:30px; padding-left:54px;">Manage existing fee entries</p>
+
+            <div style="overflow-x: auto;">
+                <table class="fee-table" id="feeTable">
+                    <thead>
+                        <tr>
+                            <th>Class / Group</th>
+                            <th>Admission Fee</th>
+                            <th>Tuition Fee</th>
+                            <th>Annual Charges</th>
+                            <th>Transport</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="feeTableBody">
+                        <!-- Fee entries will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p>&copy; <span data-current-year>2026</span> Amol Chand Public School. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/api-service.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/admin-fee.js"></script>
+    <script src="js/ripple-effect.js"></script>
+</body>
+</html>

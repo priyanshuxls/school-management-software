@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions & Downloads &mdash; Amol Chand Public School</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="cursor-glow"></div>
+
+    <div class="background-wrapper">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <header class="site-header" id="navbar">
+        <nav>
+            <a href="index.html" class="logo-container">
+                <div class="logo-icon">AC</div>
+                <div>
+                    <div class="school-name">Amol Chand Public School</div>
+                    <div class="school-tagline">Empowering Future Leaders</div>
+                </div>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="admission.html">Admissions</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" onclick="return false;">
+                        Academics <i class="fas fa-chevron-down dropdown-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="syllabus.html"><i class="fas fa-book-open"></i> Syllabus</a></li>
+                        <li><a href="result.html"><i class="fas fa-chart-line"></i> Results</a></li>
+                        <li><a href="activity.html"><i class="fas fa-running"></i> Activities</a></li>
+                        <li><a href="toppers.html"><i class="fas fa-trophy"></i> Toppers</a></li>
+                        <li><a href="faculty.html"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <div class="page-banner">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>Admissions & Downloads</span>
+        </div>
+        <h1>Admissions & Downloads</h1>
+        <p>Everything you need for admissions, fee details, and downloadable school documents.</p>
+    </div>
+
+    <main class="container" style="padding-top: 0;">
+        <div class="resources-tabs reveal">
+            <button class="tab-btn active" data-tab-target="admission">
+                <i class="fas fa-user-plus"></i> &nbsp;Admission
+            </button>
+            <button class="tab-btn" data-tab-target="fee">
+                <i class="fas fa-rupee-sign"></i> &nbsp;Fee Structure
+            </button>
+            <button class="tab-btn" data-tab-target="downloads">
+                <i class="fas fa-download"></i> &nbsp;Downloads
+            </button>
+        </div>
+
+        <div id="admission" class="tab-panel active">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:start;">
+                <div class="glass glass-card reveal" style="padding: 36px;">
+                    <div class="section-title" style="margin-bottom:6px;">
+                        <i class="fas fa-graduation-cap" style="color:#60a5fa;"></i>
+                        <h2>Apply for Admission</h2>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:28px; padding-left:54px;">Session 2025-26 &middot; CBSE Curriculum</p>
+
+                    <form class="glass-form" id="admissionForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Student's First Name</label>
+                                <input type="text" class="glass-input" placeholder="e.g. Rahul" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="glass-input" placeholder="e.g. Sharma" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Parent / Guardian Name</label>
+                            <input type="text" class="glass-input" placeholder="Parent's full name" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="glass-input" placeholder="parent@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="glass-input" placeholder="+91 XXXXX XXXXX" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Class Applying For</label>
+                                <select class="glass-input" required>
+                                    <option value="" disabled selected>Select class</option>
+                                    <option>Pre-Nursery</option>
+                                    <option>Nursery</option>
+                                    <option>KG</option>
+                                    <option>Class 1</option>
+                                    <option>Class 2</option>
+                                    <option>Class 3</option>
+                                    <option>Class 4</option>
+                                    <option>Class 5</option>
+                                    <option>Class 6</option>
+                                    <option>Class 7</option>
+                                    <option>Class 8</option>
+                                    <option>Class 9</option>
+                                    <option>Class 10</option>
+                                    <option>Class 11 (Science)</option>
+                                    <option>Class 11 (Commerce)</option>
+                                    <option>Class 12 (Science)</option>
+                                    <option>Class 12 (Commerce)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Date of Birth</label>
+                                <input type="date" class="glass-input" required style="color-scheme: dark;">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Previous School (if any)</label>
+                            <input type="text" class="glass-input" placeholder="Name of previous school">
+                        </div>
+
+                        <div id="admissionMsg" style="display:none;"></div>
+
+                        <button type="submit" class="btn" style="margin-top:8px; width:100%; justify-content:center;">
+                            <i class="fas fa-paper-plane"></i> Submit Application
+                        </button>
+
+                        <p style="font-size:0.75rem; color:var(--text-muted); text-align:center; margin-top:8px;">
+                            Our admissions team will contact you within 2 working days.
+                        </p>
+                    </form>
+                </div>
+
+                <div style="display:flex; flex-direction:column; gap:20px;">
+                    <div class="glass glass-card reveal" style="padding:28px;">
+                        <h3 style="margin-bottom:16px; font-size:1.1rem;"><i class="fas fa-calendar-check" style="color:var(--accent); margin-right:8px;"></i> Admission Schedule</h3>
+                        <div style="display:flex; flex-direction:column; gap:12px;">
+                            <div style="display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--glass-border);">
+                                <span style="color:var(--text-muted); font-size:0.88rem;">Form Available</span>
+                                <span style="font-weight:600; font-size:0.88rem;">Nov 1, 2025</span>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--glass-border);">
+                                <span style="color:var(--text-muted); font-size:0.88rem;">Last Date</span>
+                                <span style="font-weight:600; color:var(--secondary); font-size:0.88rem;">Feb 28, 2026</span>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--glass-border);">
+                                <span style="color:var(--text-muted); font-size:0.88rem;">Entrance Test</span>
+                                <span style="font-weight:600; font-size:0.88rem;">March 15, 2026</span>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; padding:12px 0;">
+                                <span style="color:var(--text-muted); font-size:0.88rem;">Results</span>
+                                <span style="font-weight:600; font-size:0.88rem;">March 25, 2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass glass-card reveal" style="padding:28px;">
+                        <h3 style="margin-bottom:16px; font-size:1.1rem;"><i class="fas fa-file-alt" style="color:var(--primary); margin-right:8px;"></i> Documents Required</h3>
+                        <ul style="list-style:none; display:flex; flex-direction:column; gap:10px;">
+                            <li style="display:flex; align-items:center; gap:10px; font-size:0.88rem;"><i class="fas fa-check-circle" style="color:var(--accent); flex-shrink:0;"></i> Birth Certificate (Original + Photocopy)</li>
+                            <li style="display:flex; align-items:center; gap:10px; font-size:0.88rem;"><i class="fas fa-check-circle" style="color:var(--accent); flex-shrink:0;"></i> Previous Class Report Card</li>
+                            <li style="display:flex; align-items:center; gap:10px; font-size:0.88rem;"><i class="fas fa-check-circle" style="color:var(--accent); flex-shrink:0;"></i> Transfer Certificate (TC)</li>
+                            <li style="display:flex; align-items:center; gap:10px; font-size:0.88rem;"><i class="fas fa-check-circle" style="color:var(--accent); flex-shrink:0;"></i> 4 passport-size photographs</li>
+                            <li style="display:flex; align-items:center; gap:10px; font-size:0.88rem;"><i class="fas fa-check-circle" style="color:var(--accent); flex-shrink:0;"></i> Aadhaar Card (Parent and Student)</li>
+                            <li style="display:flex; align-items:center; gap:10px; font-size:0.88rem;"><i class="fas fa-check-circle" style="color:var(--accent); flex-shrink:0;"></i> Address Proof</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass glass-card reveal" style="padding:22px; background:linear-gradient(135deg, rgba(37,99,235,0.15), rgba(236,72,153,0.1)); border-color:rgba(37,99,235,0.3);">
+                        <p style="font-size:0.88rem; color:rgba(255,255,255,0.85);"><i class="fas fa-phone-alt" style="color:var(--primary); margin-right:8px;"></i> For admission queries call us at <strong>+91 98765 43210</strong> or email <strong>admissions@acps.edu.in</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="fee" class="tab-panel">
+            <div class="glass glass-card reveal" style="padding: 36px;">
+                <div class="section-title" style="margin-bottom:6px;">
+                    <i class="fas fa-rupee-sign" style="color:#fbbf24;"></i>
+                    <h2>Fee Structure 2025-26</h2>
+                </div>
+                <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:30px; padding-left:54px;">All fees are in Indian Rupees (&#8377;). Transport fee is charged as per route.</p>
+
+                <div style="overflow-x: auto;">
+                    <table class="fee-table">
+                        <thead>
+                            <tr>
+                                <th>Class / Group</th>
+                                <th>Admission Fee <small style="font-weight:400;">(One-time)</small></th>
+                                <th>Tuition Fee <small style="font-weight:400;">(Quarterly)</small></th>
+                                <th>Annual Charges</th>
+                                <th>Transport <small style="font-weight:400;">(Optional)</small></th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-fee-tbody">
+                            <tr><td><strong>Pre-Nursery - UKG</strong></td><td>&#8377; 5,000</td><td>&#8377; 6,500</td><td>&#8377; 3,000</td><td>As per route</td></tr>
+                            <tr><td><strong>Class I - V</strong></td><td>&#8377; 8,000</td><td>&#8377; 8,500</td><td>&#8377; 4,500</td><td>As per route</td></tr>
+                            <tr><td><strong>Class VI - VIII</strong></td><td>&#8377; 10,000</td><td>&#8377; 10,500</td><td>&#8377; 5,500</td><td>As per route</td></tr>
+                            <tr><td><strong>Class IX - X</strong></td><td>&#8377; 12,000</td><td>&#8377; 12,500</td><td>&#8377; 6,000</td><td>As per route</td></tr>
+                            <tr><td><strong>Class XI - XII (Science)</strong></td><td>&#8377; 15,000</td><td>&#8377; 15,500</td><td>&#8377; 7,000</td><td>As per route</td></tr>
+                            <tr><td><strong>Class XI - XII (Commerce)</strong></td><td>&#8377; 13,000</td><td>&#8377; 13,500</td><td>&#8377; 6,500</td><td>As per route</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:30px;">
+                    <div style="padding:16px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); border-radius:12px;">
+                        <div style="font-size:0.75rem; color:#34d399; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Sibling Discount</div>
+                        <div style="font-size:1.3rem; font-weight:700; margin-top:4px;">10% Off</div>
+                        <div style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">On tuition fee for 2nd child onwards</div>
+                    </div>
+                    <div style="padding:16px; background:rgba(37,99,235,0.1); border:1px solid rgba(37,99,235,0.25); border-radius:12px;">
+                        <div style="font-size:0.75rem; color:#60a5fa; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Merit Scholarship</div>
+                        <div style="font-size:1.3rem; font-weight:700; margin-top:4px;">Up to 50% Off</div>
+                        <div style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">For students scoring 90%+ in boards</div>
+                    </div>
+                    <div style="padding:16px; background:rgba(236,72,153,0.1); border:1px solid rgba(236,72,153,0.25); border-radius:12px;">
+                        <div style="font-size:0.75rem; color:#f472b6; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">EWS Quota</div>
+                        <div style="font-size:1.3rem; font-weight:700; margin-top:4px;">25% Reserved</div>
+                        <div style="font-size:0.78rem; color:var(--text-muted); margin-top:4px;">As per RTE Act norms</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="downloads" class="tab-panel">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+                <div class="glass glass-card reveal" style="padding:28px;">
+                    <h3 style="margin-bottom:20px; font-size:1.1rem;"><i class="fas fa-file-alt" style="color:#60a5fa; margin-right:8px;"></i> Forms and Applications</h3>
+                    <div id="admin-downloads-list" style="display:flex; flex-direction:column; gap:10px;">
+                        <div class="resource-card glass glass-card" style="padding:16px 18px;">
+                            <div class="resource-icon blue"><i class="fas fa-file-pdf"></i></div>
+                            <div style="flex:1;">
+                                <div style="font-weight:600; font-size:0.92rem;">Admission Form 2025-26</div>
+                                <div style="font-size:0.75rem; color:var(--text-muted);">PDF &middot; 245 KB</div>
+                            </div>
+                            <button class="btn btn-sm" type="button"><i class="fas fa-download"></i></button>
+                        </div>
+                        <div class="resource-card glass glass-card" style="padding:16px 18px;">
+                            <div class="resource-icon pink"><i class="fas fa-file-pdf"></i></div>
+                            <div style="flex:1;">
+                                <div style="font-weight:600; font-size:0.92rem;">TC Application Form</div>
+                                <div style="font-size:0.75rem; color:var(--text-muted);">PDF &middot; 180 KB</div>
+                            </div>
+                            <button class="btn btn-sm" type="button"><i class="fas fa-download"></i></button>
+                        </div>
+                        <div class="resource-card glass glass-card" style="padding:16px 18px;">
+                            <div class="resource-icon green"><i class="fas fa-file-pdf"></i></div>
+                            <div style="flex:1;">
+                                <div style="font-weight:600; font-size:0.92rem;">Scholarship Application</div>
+                                <div style="font-size:0.75rem; color:var(--text-muted);">PDF &middot; 320 KB</div>
+                            </div>
+                            <button class="btn btn-sm" type="button"><i class="fas fa-download"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass glass-card reveal" style="padding:28px;">
+                    <h3 style="margin-bottom:20px; font-size:1.1rem;"><i class="fas fa-calendar-alt" style="color:#fbbf24; margin-right:8px;"></i> Academic Calendars and Circulars</h3>
+                    <div style="display:flex; flex-direction:column; gap:10px;">
+                        <div class="resource-card glass glass-card" style="padding:16px 18px;">
+                            <div class="resource-icon amber"><i class="fas fa-file-excel"></i></div>
+                            <div style="flex:1;">
+                                <div style="font-weight:600; font-size:0.92rem;">Academic Calendar 2025-26</div>
+                                <div style="font-size:0.75rem; color:var(--text-muted);">PDF &middot; 410 KB</div>
+                            </div>
+                            <button class="btn btn-sm" type="button"><i class="fas fa-download"></i></button>
+                        </div>
+                        <div class="resource-card glass glass-card" style="padding:16px 18px;">
+                            <div class="resource-icon blue"><i class="fas fa-file-pdf"></i></div>
+                            <div style="flex:1;">
+                                <div style="font-weight:600; font-size:0.92rem;">Exam Schedule - Half Yearly</div>
+                                <div style="font-size:0.75rem; color:var(--text-muted);">PDF &middot; 195 KB</div>
+                            </div>
+                            <button class="btn btn-sm" type="button"><i class="fas fa-download"></i></button>
+                        </div>
+                        <div class="resource-card glass glass-card" style="padding:16px 18px;">
+                            <div class="resource-icon green"><i class="fas fa-file-pdf"></i></div>
+                            <div style="flex:1;">
+                                <div style="font-weight:600; font-size:0.92rem;">Fee Structure PDF 2025-26</div>
+                                <div style="font-size:0.75rem; color:var(--text-muted);">PDF &middot; 280 KB</div>
+                            </div>
+                            <button class="btn btn-sm" type="button"><i class="fas fa-download"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo-container" style="margin-bottom:0;">
+                    <div class="logo-icon">AC</div>
+                    <div>
+                        <div class="school-name">Amol Chand Public School</div>
+                        <div class="school-tagline">Empowering Future Leaders</div>
+                    </div>
+                </div>
+                <p>Dedicated to nurturing minds and building character since 1985. CBSE affiliated school providing holistic education for classes Pre-Nursery to XII.</p>
+                <div class="social-links">
+                    <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="activity.html">Activities</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="admission.html">Admissions</a></li>
+                    <li><a href="syllabus.html">Syllabus</a></li>
+                    <li><a href="admission.html#fee">Fee Structure</a></li>
+                    <li><a href="result.html">Result Portal</a></li>
+                    <li><a href="admission.html#downloads">Downloads</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+                    <li><a href="mailto:info@amolchandschool.edu.in">info@acps.edu.in</a></li>
+                    <li><a href="contact.html">Send a Message</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span data-current-year>2026</span> Amol Chand Public School. All rights reserved.</p>
+            <p style="display:flex; gap:20px;">
+                <a href="#" style="color:var(--text-muted); font-size:0.82rem;">Privacy Policy</a>
+                <a href="#" style="color:var(--text-muted); font-size:0.82rem;">Terms of Use</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/api-service.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/ripple-effect.js"></script>
+</body>
+</html>
